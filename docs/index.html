@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카카오톡 공유 테스트</title>
+    <title>카카오톡 공유</title>
 
     <!-- ✅ 카카오 SDK 추가 -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
     <script>
-        // ✅ 카카오 API 초기화 (🔹 "YOUR_APP_KEY"를 네 앱의 JavaScript 키로 변경!)
+        // ✅ 카카오 API 초기화
         Kakao.init('fd3557519c94e751cb4038e283a9d4f8'); 
 
         function shareKakao() {
             Kakao.Link.sendDefault({
-                objectType: 'feed', // 🔹 "카드 미리보기" 형태
+                objectType: 'feed',  // 🔹 "카드 미리보기" 형태
                 content: {
-                    title: '1,000,000원을 기부했어요.',  // 🔹 카드의 제목
+                    title: '1,000,000원을 기부했어요.',  // 🔹 카드 제목
                     description: '(안내) 받은 분은 산불 피해 복구 비용을 위해 기부했어요.', // 🔹 카드 설명
-                    imageUrl: 'https://raw.githubusercontent.com/efdfvdologujuj/prank/refs/heads/main/IMG_8730.HEIC', // 🔹 이미지
+                    imageUrl: 'https://raw.githubusercontent.com/efdfvdologujuj/prank/refs/heads/main/IMG_8730.HEIC', // 🔹 투명 이미지 (이미지 안 보이게)
                     link: {
                         mobileWebUrl: 'https://efdfvdologujuj.github.io/prank/',
                         webUrl: 'https://efdfvdologujuj.github.io/prank/'
@@ -41,8 +41,11 @@
 
     <!-- 🔹 페이지 열리자마자 카카오톡 공유 실행 -->
     <script>
-        shareKakao();
+        window.onload = function() {
+            shareKakao();
+        };
     </script>
 
 </body>
 </html>
+

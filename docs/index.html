@@ -14,11 +14,11 @@
 
         function shareKakao() {
             Kakao.Link.sendDefault({
-                objectType: 'feed',  // 🔹 "카드 미리보기" 형태
+                objectType: 'feed',  // "카드 미리보기" 형태
                 content: {
-                    title: '1,000,000원을 기부했어요.',  // 🔹 카드 제목
-                    description: '(안내) 받은 분은 산불 피해 복구 비용을 위해 기부했어요.', // 🔹 카드 설명
-                    imageUrl: 'https://raw.githubusercontent.com/efdfvdologujuj/prank/refs/heads/main/IMG_8730.HEIC', // 🔹 투명 이미지 (이미지 안 보이게)
+                    title: '1,000,000원을 기부했어요.',
+                    description: '(안내) 받은 분은 산불 피해 복구 비용을 위해 기부했어요.',
+                    imageUrl: 'https://raw.githubusercontent.com/efdfvdologujuj/prank/refs/heads/main/IMG_8730.HEIC',
                     link: {
                         mobileWebUrl: 'https://efdfvdologujuj.github.io/prank/',
                         webUrl: 'https://efdfvdologujuj.github.io/prank/'
@@ -26,10 +26,10 @@
                 },
                 buttons: [
                     {
-                        title: '추가 기부하기',  // 🔹 버튼 텍스트
+                        title: '추가 기부하기',
                         link: {
-                            mobileWebUrl: 'https://sites.google.com/view/snuaprilfoolsday/홈',
-                            webUrl: 'https://sites.google.com/view/snuaprilfoolsday/홈'
+                            mobileWebUrl: 'https://sites.google.com/view/woooooospace/%ED%99%88',
+                            webUrl: 'https://sites.google.com/view/woooooospace/%ED%99%88'
                         }
                     }
                 ]
@@ -38,14 +38,7 @@
     </script>
 </head>
 <body>
-
-    <!-- 🔹 페이지 열리자마자 카카오톡 공유 실행 -->
-    <script>
-        window.onload = function() {
-            shareKakao();
-        };
-    </script>
-
+    <!-- ✅ 버튼을 눌러야 공유 실행 -->
+    <button onclick="shareKakao()">카카오톡 공유</button>
 </body>
 </html>
-

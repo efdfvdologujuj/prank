@@ -3,37 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오톡 공유 테스트</title>
 
-    <meta property="og:title" content="카카오페이 송금" />
-    <meta property="og:description" content="송금 요청이 도착했습니다." />
-    <meta property="og:image" content="https://raw.githubusercontent.com/efdfvdologujuj/prank/main/prank.png" />
-    <meta property="og:url" content="https://efdfvdologujuj.github.io/prank/" />
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- ✅ 카카오 SDK 추가 -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
-    <title>카카오페이 송금</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f2f2f2;
-            margin: 0;
+    <script>
+        // ✅ 카카오 API 초기화 (🔹 "YOUR_APP_KEY"를 네 앱의 JavaScript 키로 변경!)
+        Kakao.init('fd3557519c94e751cb4038e283a9d4f8'); 
+
+        function shareKakao() {
+            Kakao.Link.sendDefault({
+                objectType: 'feed', // 🔹 "카드 미리보기" 형태
+                content: {
+                    title: '카카오페이 송금 요청',  // 🔹 카드의 제목
+                    description: '송금 요청이 도착했습니다!', // 🔹 카드 설명
+                    imageUrl: 'https://raw.githubusercontent.com/efdfvdologujuj/prank/main/prank.png', // 🔹 이미지
+                    link: {
+                        mobileWebUrl: 'https://efdfvdologujuj.github.io/prank/',
+                        webUrl: 'https://efdfvdologujuj.github.io/prank/'
+                    }
+                },
+                buttons: [
+                    {
+                        title: '송금받기',  // 🔹 버튼 텍스트
+                        link: {
+                            mobileWebUrl: 'https://efdfvdologujuj.github.io/prank/',
+                            webUrl: 'https://efdfvdologujuj.github.io/prank/'
+                        }
+                    }
+                ]
+            });
         }
-        .card {
-            width: 813px;
-            height: 344px;
-            background-image: url('https://raw.githubusercontent.com/efdfvdologujuj/prank/main/prank.png'); /* 🔹 네 이미지로 변경 */
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    </script>
 </head>
 <body>
 
-    <div class="card"></div> <!-- 🔹 송금받기 버튼 제거 -->
+    <h1>카카오톡 공유 테스트</h1>
+
+    <!-- ✅ "카카오톡으로 공유하기" 버튼 -->
+    <button onclick="shareKakao()">카카오톡으로 공유하기</button>
 
 </body>
 </html>
